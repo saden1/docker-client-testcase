@@ -16,7 +16,7 @@ public class DockerClientTest {
         System.out.println("Pulling postgres image");
         AnsiProgressHandler progressHandler = new AnsiProgressHandler();
 
-        client.pull("postgres:9.4", progressHandler);
+        client.pull("postgres:latest", progressHandler);
 
         System.out.println("Image pulled");
     }
