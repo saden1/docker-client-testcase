@@ -1,8 +1,8 @@
 package test;
 
-import com.spotify.docker.client.AnsiProgressHandler;
-import com.spotify.docker.client.DefaultDockerClient;
 import org.junit.Test;
+import org.testifyproject.spotify.docker.client.AnsiProgressHandler;
+import org.testifyproject.spotify.docker.client.DefaultDockerClient;
 
 public class DockerClientTest {
 
@@ -11,12 +11,14 @@ public class DockerClientTest {
         System.out.println("Creating client from env");
 
         DefaultDockerClient client = DefaultDockerClient.fromEnv()
+                .connectTimeoutMillis(10000)
+                .connectionPoolSize(16)
                 .build();
 
         System.out.println("Pulling postgres image");
         AnsiProgressHandler progressHandler = new AnsiProgressHandler();
 
-        client.pull("postgres:latest", progressHandler);
+        client.pull("postgres", progressHandler);
 
         System.out.println("Image pulled");
     }

@@ -59,9 +59,9 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.spotify</groupId>
-            <artifactId>docker-client</artifactId>
-            <version>8.6.2</version>
+            <groupId>org.testifyproject.external</groupId>
+            <artifactId>external-docker-client</artifactId>
+            <version>0.9.6-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
